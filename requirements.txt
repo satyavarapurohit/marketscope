@@ -1,0 +1,14 @@
+streamlit>=1.50
+plotly>=5.22
+pandas>=2.2
+numpy>=1.26,<2.2
+scikit-learn>=1.4
+# XGBoost: CPU-only build on Linux avoids a large unused GPU (NCCL) download.
+xgboost-cpu>=2.1; sys_platform == "linux"
+xgboost>=2.0; sys_platform != "linux"
+# TensorFlow: the smaller CPU-only build on Linux servers (e.g. Streamlit Cloud),
+# the normal build on macOS / Windows.
+tensorflow-cpu>=2.16; sys_platform == "linux"
+tensorflow>=2.16; sys_platform != "linux"
+yfinance>=0.2.50
+watchdog>=4.0
