@@ -356,7 +356,8 @@ def metric_comparison(table: pd.DataFrame, metric: str, height=300, lower_is_bet
                      ticktext=[n.replace("Naive Baseline", "Baseline") for n in t.index], tickvals=list(t.index))
     if metric == "Directional Accuracy %":
         fig.add_hline(y=50, line=dict(color=C["muted"], width=1, dash="dot"),
-                      annotation_text="50% = coin flip", annotation_font=dict(size=10, color=C["muted"]))
+                      annotation_text="50% = coin flip", annotation_position="bottom left",
+                      annotation_font=dict(size=10, color=C["muted"]))
     return fig
 
 

@@ -77,7 +77,8 @@ def render():
         trend = "Above" if last > df["SMA 50"].iloc[-1] else "Below"
         rows = [
             {"k": "Last close", "v": f"₹{last:,.2f}"},
-            {"k": "Period high / low", "v": f"₹{stats['Period High']:,.2f} / ₹{stats['Period Low']:,.2f}"},
+            {"k": "Period high", "v": f"₹{stats['Period High']:,.2f}"},
+            {"k": "Period low", "v": f"₹{stats['Period Low']:,.2f}"},
             {"k": "Period return", "v": f"{stats['Period Return %']:+.2f}%"},
             {"k": "Annualised volatility", "v": f"{stats['Ann. Volatility %']:.2f}%"},
             {"k": "Max drawdown", "v": f"{stats['Max Drawdown %']:.2f}%"},
